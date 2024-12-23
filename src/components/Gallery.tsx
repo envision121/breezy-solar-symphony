@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { ArrowRight } from "lucide-react";
 
 const Gallery = () => {
   const projects = [
@@ -40,6 +41,16 @@ const Gallery = () => {
       title: "Residential Solar Setup",
       location: "Gujarat",
       image: "https://images.unsplash.com/photo-1509391366360-2e959784a276",
+    },
+    {
+      title: "Urban Wind Installation",
+      location: "Delhi",
+      image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7",
+    },
+    {
+      title: "Rural Solar Project",
+      location: "Rajasthan",
+      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276",
     }
   ];
 
@@ -47,7 +58,7 @@ const Gallery = () => {
     { 
       loop: true,
       align: "start",
-      slidesToScroll: 1,
+      slidesToScroll: 4,
     },
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
@@ -61,7 +72,7 @@ const Gallery = () => {
             <span>Our Projects</span>
             <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
           </h2>
-          <h3 className="font-heading text-3xl font-medium text-black">
+          <h3 className="font-heading text-2xl font-medium text-black">
             Explore Our Latest Projects
           </h3>
         </div>
@@ -76,8 +87,8 @@ const Gallery = () => {
         >
           <CarouselContent>
             {projects.map((project, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
-                <div className="relative overflow-hidden rounded-2xl shadow-lg h-[400px]">
+              <CarouselItem key={index} className="md:basis-1/4">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg h-[300px] mx-2">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -96,6 +107,16 @@ const Gallery = () => {
           <CarouselPrevious className="hidden md:flex" />
           <CarouselNext className="hidden md:flex" />
         </Carousel>
+
+        <div className="flex justify-center mt-8">
+          <a
+            href="/gallery"
+            className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full inline-flex items-center group transition-all duration-300"
+          >
+            View More Projects
+            <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
       </div>
     </section>
   );

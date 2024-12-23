@@ -8,7 +8,7 @@ const Mission = () => {
           <div className="space-y-8 order-2 lg:order-1">
             <div className="space-y-4 opacity-0 animate-fadeIn" style={{ animationDelay: "200ms" }}>
               <h2 className="text-primary font-semibold tracking-wider uppercase">About Us</h2>
-              <h3 className="text-3xl md:text-4xl font-semibold leading-tight">
+              <h3 className="text-2xl md:text-3xl font-semibold leading-tight">
                 Pioneering Green Energy Solutions
               </h3>
             </div>
@@ -45,12 +45,12 @@ const Mission = () => {
           </div>
 
           <div className="relative order-1 lg:order-2">
-            <div className="relative z-10 rounded-3xl overflow-hidden opacity-0 animate-fadeIn shadow-2xl" 
+            <div className="relative z-10 rounded-3xl overflow-hidden opacity-0 animate-fadeIn shadow-2xl max-w-md mx-auto lg:max-w-none" 
                  style={{ animationDelay: "400ms" }}>
               <img
                 src="https://images.unsplash.com/photo-1501854140801-50d01698950b"
                 alt="Green Energy Solutions"
-                className="w-full h-[600px] object-cover hover:scale-110 transition-transform duration-700"
+                className="w-full h-[400px] lg:h-[600px] object-cover hover:scale-110 transition-transform duration-700"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 transform rotate-3 rounded-3xl scale-95 -z-10" />

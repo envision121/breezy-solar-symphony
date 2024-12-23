@@ -20,21 +20,21 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#70C232", // Fresh green color
-          light: "#8ED553",
-          dark: "#5A9E28",
+          DEFAULT: "#ff7029", // New orange color
+          light: "#ff8f54",
+          dark: "#e65615",
         },
         secondary: {
-          DEFAULT: "#1B3C35", // Dark green
+          DEFAULT: "#1B3C35",
           light: "#2A5B50",
           dark: "#112723",
         },
         accent: {
-          DEFAULT: "#FFB342", // Warm orange
+          DEFAULT: "#FFB342",
           foreground: "#FFFFFF",
         },
         background: {
-          light: "#FFFFFF", // Clean white
+          light: "#FFFFFF",
           dark: "#1B3C35",
         },
         text: {

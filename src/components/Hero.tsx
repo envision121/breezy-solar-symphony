@@ -38,7 +38,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-[80vh] overflow-hidden">
+    <div className="relative h-[600px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -87,8 +87,7 @@ const Hero = () => {
           </div>
         </div>
       ))}
-      
-      <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-between items-center px-8">
+      <div className="absolute bottom-16 left-0 right-0 z-30 flex justify-between items-center px-8">
         <button
           onClick={prevSlide}
           className="bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-sm transition-all duration-300"

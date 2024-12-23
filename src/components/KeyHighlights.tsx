@@ -158,9 +158,9 @@ const KeyHighlights = () => {
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                   <div className="mb-4">
-                    <Counter end={1} prefix="#" duration={3000} />
+                    <Counter end={15} suffix="+ yrs" duration={3000} />
                   </div>
-                  <p className="text-gray-600">Leading provider of solar power plants in Tamil Nadu and South India</p>
+                  <p className="text-gray-600">of experience</p>
                   <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
                     <div className="h-full bg-primary w-[95%] animate-[progress_2s_ease-out]"></div>
                   </div>

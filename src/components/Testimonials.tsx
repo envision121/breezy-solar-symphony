@@ -43,29 +43,38 @@ const Testimonials = () => {
           <h3 className="main-heading">What Our Clients Say</h3>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <Quote className="w-10 h-10 text-primary/20 mb-4" />
-              <p className="text-gray-600 mb-6 line-clamp-4">{testimonial.text}</p>
-              <div className="flex items-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative bg-white rounded-xl shadow-lg p-8 mb-8">
+            <Quote className="w-10 h-10 text-primary/20 absolute top-4 left-4" />
+            <div className="text-center px-8 pt-8">
+              <p className="text-gray-600 mb-6">{testimonials[currentSlide].text}</p>
+              <div className="flex items-center justify-center">
                 <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
+                  src={testimonials[currentSlide].image}
+                  alt={testimonials[currentSlide].name}
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
-                <div>
-                  <h4 className="font-semibold">{testimonial.name}</h4>
+                <div className="text-left">
+                  <h4 className="font-semibold">{testimonials[currentSlide].name}</h4>
                   <p className="text-sm text-gray-500">
-                    {testimonial.position} at {testimonial.company}
+                    {testimonials[currentSlide].position} at {testimonials[currentSlide].company}
                   </p>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+          
+          <div className="flex justify-center gap-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentSlide ? "w-8 bg-primary" : "bg-gray-300"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

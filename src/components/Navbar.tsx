@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,19 +16,41 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        {/* Top contact bar */}
+        <div className="hidden md:flex justify-end items-center py-2 border-b text-sm">
+          <div className="flex items-center space-x-6">
+            <a href="tel:+911234567890" className="flex items-center text-gray-600 hover:text-primary">
+              <Phone className="h-4 w-4 mr-2" />
+              <span>+91 123 456 7890</span>
+            </a>
+            <a href="tel:+911234567891" className="flex items-center text-gray-600 hover:text-primary">
+              <Phone className="h-4 w-4 mr-2" />
+              <span>+91 123 456 7891</span>
+            </a>
+            <a href="mailto:info@empeegreenenergy.com" className="flex items-center text-gray-600 hover:text-primary">
+              <Mail className="h-4 w-4 mr-2" />
+              <span>info@empeegreenenergy.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
-            <span className="text-primary font-bold text-xl">Empee Green Energy</span>
+            <img 
+              src="/lovable-uploads/60eb7af7-d873-47e6-bc2a-44c12fa25d90.png" 
+              alt="Empe Green Energy P Ltd" 
+              className="h-16 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-4">
+            <div className="ml-10 flex items-center space-x-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  className="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-base font-medium transition-colors"
                 >
                   {item.name}
                 </a>

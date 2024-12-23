@@ -35,7 +35,7 @@ const Products = () => {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 animate-fadeIn"
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 animate-fadeIn flex flex-col"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="relative h-48 overflow-hidden">
@@ -46,9 +46,9 @@ const Products = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   {category.products.map((product, idx) => (
                     <li key={idx} className="text-gray-600 flex items-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
@@ -58,7 +58,7 @@ const Products = () => {
                 </ul>
                 <a
                   href="#"
-                  className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full inline-flex items-center group transition-all duration-300"
+                  className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full inline-flex items-center group transition-all duration-300 justify-center"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
