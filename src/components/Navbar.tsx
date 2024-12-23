@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="hidden md:flex justify-between items-center py-2 border-b text-sm">
           <div className="flex items-center space-x-2 text-gray-600">
             <MapPin className="h-4 w-4 text-primary" />
-            <span>Empe Green Energy p Ltd, 1st Floor, C1, III Phase –Thiru-vi-ka Industrial Estate, Ekkattuthangal, Guindy Chennai - 600 032, Tamil Nadu, India.</span>
+            <span>Ekkattuthangal, Guindy Chennai - 600 032</span>
           </div>
           <div className="flex items-center space-x-6">
             <a href="tel:+919841210943" className="flex items-center text-gray-600 hover:text-primary">
