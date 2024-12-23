@@ -1,4 +1,4 @@
-import { Wind, Sun, Battery, Zap } from "lucide-react";
+import { Wind, Sun, Battery, Zap, ArrowRight } from "lucide-react";
 
 const Services = () => {
   const services = [
