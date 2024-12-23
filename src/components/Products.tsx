@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+
 const Products = () => {
   const categories = [
     {
@@ -23,28 +25,44 @@ const Products = () => {
   ];
 
   return (
-    <section className="py-16 bg-white animate-fade-in">
+    <section className="py-24 bg-gray-50" id="products">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Products</h2>
+        <div className="text-center mb-16 opacity-0 animate-fadeIn">
+          <h2 className="section-title">Our Products</h2>
+          <h3 className="main-heading">Innovative Solutions</h3>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-scale-in"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 animate-fadeIn"
+              style={{ animationDelay: `${index * 200}ms` }}
             >
-              <img
-                src={category.image}
-                alt={category.title}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-6">
                   {category.products.map((product, idx) => (
-                    <li key={idx} className="text-gray-600">• {product}</li>
+                    <li key={idx} className="text-gray-600 flex items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
+                      {product}
+                    </li>
                   ))}
                 </ul>
+                <a
+                  href="#"
+                  className="inline-flex items-center text-primary hover:text-primary-dark transition-colors group"
+                >
+                  Learn More{" "}
+                  <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </div>
           ))}

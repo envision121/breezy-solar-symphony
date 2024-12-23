@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Quote } from "lucide-react";
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,30 +36,50 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-24 bg-gray-50" id="testimonials">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Client Testimonials</h2>
-        <div className="relative h-[300px] overflow-hidden">
+        <div className="text-center mb-16 opacity-0 animate-fadeIn">
+          <h2 className="section-title">Testimonials</h2>
+          <h3 className="main-heading">What Our Clients Say</h3>
+        </div>
+        <div className="relative h-[400px] overflow-hidden">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
+              className={`absolute inset-0 transition-all duration-700 transform ${
+                index === currentSlide
+                  ? "opacity-100 translate-x-0"
+                  : index < currentSlide
+                  ? "opacity-0 -translate-x-full"
+                  : "opacity-0 translate-x-full"
               }`}
             >
               <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+                <Quote className="w-16 h-16 text-primary/20 mb-8" />
+                <p className="text-xl text-gray-600 mb-8 italic">{testimonial.text}</p>
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-20 h-20 rounded-full object-cover mb-6"
+                  className="w-20 h-20 rounded-full object-cover mb-4 ring-4 ring-primary/10"
                 />
-                <p className="text-gray-600 text-lg mb-6 italic">"{testimonial.text}"</p>
-                <h3 className="font-semibold text-lg">{testimonial.name}</h3>
+                <h4 className="font-semibold text-lg">{testimonial.name}</h4>
                 <p className="text-gray-500">
                   {testimonial.position} at {testimonial.company}
                 </p>
               </div>
             </div>
+          ))}
+        </div>
+        <div className="flex justify-center mt-8 space-x-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide ? "bg-primary w-6" : "bg-primary/20"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
       </div>
