@@ -1,4 +1,32 @@
 import { Wind, Sun, Battery, Plug, Factory, Leaf, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const Counter = ({ end, duration = 2000, suffix = "" }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime = null;
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+      
+      setCount(Math.floor(end * percentage));
+      
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    
+    window.requestAnimationFrame(step);
+  }, [end, duration]);
+
+  return (
+    <span className="text-5xl font-bold text-primary">
+      {count}{suffix}
+    </span>
+  );
+};
 
 const KeyHighlights = () => {
   const solutions = [
@@ -86,21 +114,27 @@ const KeyHighlights = () => {
           <h2 className="text-2xl font-bold mb-8 text-center">Achievements and Expertise</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-5xl font-bold text-primary mb-4 animate-[counter_2s_ease-out]">5+ MW</div>
+              <div className="mb-4">
+                <Counter end={5} suffix="+ MW" />
+              </div>
               <p className="text-gray-600">Small wind systems installed across India</p>
               <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
                 <div className="h-full bg-primary w-full animate-[progress_1.5s_ease-out]"></div>
               </div>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-5xl font-bold text-primary mb-4 animate-[counter_2s_ease-out]">#1</div>
+              <div className="mb-4">
+                <Counter end={1} prefix="#" />
+              </div>
               <p className="text-gray-600">Leading provider of solar power plants in Tamil Nadu and South India</p>
               <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
                 <div className="h-full bg-primary w-[95%] animate-[progress_1.5s_ease-out]"></div>
               </div>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-5xl font-bold text-primary mb-4 animate-[counter_2s_ease-out]">100%</div>
+              <div className="mb-4">
+                <Counter end={100} suffix="%" />
+              </div>
               <p className="text-gray-600">Proven expertise in integrating hybrid energy systems and solar water pumps</p>
               <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
                 <div className="h-full bg-primary w-full animate-[progress_1.5s_ease-out]"></div>
