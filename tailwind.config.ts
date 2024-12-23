@@ -38,10 +38,13 @@ export default {
           dark: "#1B3C35",
         },
         text: {
+          DEFAULT: "#1B3C35",
           primary: "#1B3C35",
           secondary: "#526B65",
           light: "#FFFFFF",
+          foreground: "#1B3C35", // Added this line
         },
+        foreground: "#1B3C35", // Added this line
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
