@@ -1,7 +1,7 @@
 import { Wind, Sun, Battery, Plug, Factory, Leaf, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const Counter = ({ end, duration = 2000, suffix = "" }) => {
+const Counter = ({ end, duration = 2000, prefix = "", suffix = "" }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Counter = ({ end, duration = 2000, suffix = "" }) => {
 
   return (
     <span className="text-5xl font-bold text-primary">
-      {count}{suffix}
+      {prefix}{count}{suffix}
     </span>
   );
 };
