@@ -20,20 +20,31 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#2E7D32",
-          light: "#4CAF50",
-          dark: "#1B5E20",
+          DEFAULT: "#00B67A", // Fresh green color
+          light: "#40C997",
+          dark: "#008F61",
         },
         secondary: {
-          DEFAULT: "#1976D2",
-          light: "#42A5F5",
-          dark: "#1565C0",
+          DEFAULT: "#1B3C35", // Dark green
+          light: "#2A5B50",
+          dark: "#112723",
+        },
+        accent: {
+          DEFAULT: "#F8B653", // Warm orange
+          foreground: "#FFFFFF",
+        },
+        background: {
+          light: "#F5F9F7", // Light mint
+          dark: "#1B3C35",
+        },
+        text: {
+          primary: "#1B3C35",
+          secondary: "#526B65",
+          light: "#FFFFFF",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -54,6 +65,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+        heading: ["Montserrat", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
