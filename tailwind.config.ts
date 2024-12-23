@@ -20,9 +20,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#2A5B50", // Changed to green
-          light: "#3B7A6C",
-          dark: "#1B3C35",
+          DEFAULT: "#4aab3d",
+          light: "#5bc34e",
+          dark: "#3a8930",
         },
         secondary: {
           DEFAULT: "#1B3C35",

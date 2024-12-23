@@ -102,7 +102,7 @@
   }
 
   .main-heading {
-    @apply text-4xl md:text-5xl font-bold text-text-primary leading-tight mb-6;
+    @apply text-[1.8rem] md:text-[1.8rem] font-bold text-text-primary leading-tight mb-6;
   }
 
   .service-title {

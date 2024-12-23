@@ -63,6 +63,16 @@ const Gallery = () => {
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
 
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    emblaApi.on('select', () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    });
+  }, [emblaApi]);
+
   return (
     <section className="py-24 bg-white" id="gallery">
       <div className="container mx-auto px-4">
@@ -72,7 +82,7 @@ const Gallery = () => {
             <span>Our Projects</span>
             <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
           </h2>
-          <h3 className="font-heading text-2xl font-medium text-black">
+          <h3 className="font-heading text-[1.8rem] font-medium text-black">
             Explore Our Latest Projects
           </h3>
         </div>
@@ -107,6 +117,18 @@ const Gallery = () => {
           <CarouselPrevious className="hidden md:flex" />
           <CarouselNext className="hidden md:flex" />
         </Carousel>
+
+        <div className="flex justify-center gap-2 mt-6">
+          {projects.map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                idx === selectedIndex ? "w-6 bg-primary" : "bg-gray-300"
+              }`}
+              onClick={() => emblaApi?.scrollTo(idx)}
+            />
+          ))}
+        </div>
 
         <div className="flex justify-center mt-8">
           <a
