@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, MapPin } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,19 +17,15 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="container mx-auto px-4">
         {/* Top contact bar */}
-        <div className="hidden md:flex justify-end items-center py-2 border-b text-sm">
+        <div className="hidden md:flex justify-between items-center py-2 border-b text-sm">
+          <div className="flex items-center space-x-2 text-gray-600">
+            <MapPin className="h-4 w-4" />
+            <span>123 Green Energy Street, Chennai, Tamil Nadu, India</span>
+          </div>
           <div className="flex items-center space-x-6">
             <a href="tel:+911234567890" className="flex items-center text-gray-600 hover:text-primary">
               <Phone className="h-4 w-4 mr-2" />
               <span>+91 123 456 7890</span>
-            </a>
-            <a href="tel:+911234567891" className="flex items-center text-gray-600 hover:text-primary">
-              <Phone className="h-4 w-4 mr-2" />
-              <span>+91 123 456 7891</span>
-            </a>
-            <a href="mailto:info@empeegreenenergy.com" className="flex items-center text-gray-600 hover:text-primary">
-              <Mail className="h-4 w-4 mr-2" />
-              <span>info@empeegreenenergy.com</span>
             </a>
           </div>
         </div>
@@ -50,7 +46,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  className="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-base font-semibold transition-colors"
                 >
                   {item.name}
                 </a>
@@ -77,7 +73,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                  className="text-gray-600 hover:text-primary block px-3 py-2 rounded-md text-base font-semibold"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

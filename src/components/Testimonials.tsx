@@ -40,7 +40,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 opacity-0 animate-fadeIn">
           <h2 className="section-title">Testimonials</h2>
-          <h3 className="main-heading">What Our Clients Say</h3>
+          <h3 className="text-2xl font-medium mb-4">What Our Clients Say</h3>
         </div>
         
         <div className="max-w-4xl mx-auto">

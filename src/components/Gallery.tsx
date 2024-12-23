@@ -58,7 +58,7 @@ const Gallery = () => {
     { 
       loop: true,
       align: "start",
-      slidesToScroll: 4,
+      slidesToScroll: 1,
     },
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
@@ -87,15 +87,15 @@ const Gallery = () => {
         >
           <CarouselContent>
             {projects.map((project, index) => (
-              <CarouselItem key={index} className="md:basis-1/4">
-                <div className="relative overflow-hidden rounded-2xl shadow-lg h-[300px] mx-2">
+              <CarouselItem key={index} className="md:basis-1/4 lg:basis-1/4">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg h-[300px] mx-2 group">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
                       <p className="text-white/80">{project.location}</p>
                     </div>
