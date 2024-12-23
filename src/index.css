@@ -96,6 +96,22 @@
   p {
     @apply text-text-secondary leading-relaxed;
   }
+
+  .section-title {
+    @apply uppercase tracking-wider text-sm font-semibold text-primary mb-4;
+  }
+
+  .main-heading {
+    @apply text-4xl md:text-5xl font-bold text-text-primary leading-tight mb-6;
+  }
+
+  .service-title {
+    @apply text-xl font-semibold text-text-primary mb-3;
+  }
+
+  .service-description {
+    @apply text-text-secondary text-base leading-relaxed;
+  }
 }
 
 /* Custom animations */
