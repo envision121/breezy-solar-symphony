@@ -8,29 +8,30 @@ const Gallery = () => {
     {
       title: "Solar Park Development",
       location: "Karnataka",
-      image: "https://images.unsplash.com/photo-1509390144018-eed96ad32b5e",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
     },
     {
       title: "Hybrid Energy System",
       location: "Kerala",
-      image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     },
     {
       title: "Industrial Solar Installation",
       location: "Andhra Pradesh",
-      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
     },
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 animate-fade-in">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Our Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 animate-scale-in"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <img
                 src={project.image}
