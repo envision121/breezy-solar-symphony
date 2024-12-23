@@ -13,17 +13,26 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background-light">
       <Navbar />
-      <div className="space-y-20">
+      <main className="overflow-hidden">
         <Hero />
-        <Mission />
-        <KeyHighlights />
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+          <Mission />
+        </div>
+        <div className="relative bg-gradient-to-br from-secondary/5 to-primary/5">
+          <KeyHighlights />
+        </div>
         <Services />
-        <Products />
+        <div className="relative bg-gradient-to-t from-primary/5 to-transparent">
+          <Products />
+        </div>
         <Gallery />
-        <Testimonials />
+        <div className="relative bg-gradient-to-br from-secondary/5 to-primary/5">
+          <Testimonials />
+        </div>
         <CTA />
         <Footer />
-      </div>
+      </main>
     </div>
   );
 };

@@ -1,53 +1,59 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
-const AboutUs = () => {
+const Mission = () => {
   return (
-    <section className="py-16 bg-white animate-fade-in">
+    <section className="py-24 overflow-hidden" id="about">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1501854140801-50d01698950b"
-              alt="Green Energy"
-              className="rounded-lg shadow-xl w-full h-[400px] object-cover"
-            />
-          </div>
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-gray-800">About Us</h2>
-            <div className="h-1 w-20 bg-primary rounded"></div>
-            <p className="text-gray-600 leading-relaxed">
-              At Empee Green Energy P Ltd, we are dedicated to providing reliable,
-              innovative, and high-quality renewable energy solutions. Our mission
-              is to accelerate the transition to sustainable energy through
-              cutting-edge technology and exceptional service.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              With our extensive knowledge and expertise in the field, we deliver
-              top-tier solutions in wind energy, solar power, and hybrid systems.
-            </p>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Why Choose Us?</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-primary rounded-full"></div>
-                  <span>Expertise in renewable energy technologies</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-primary rounded-full"></div>
-                  <span>Comprehensive turnkey solutions tailored to your needs</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-primary rounded-full"></div>
-                  <span>Commitment to sustainability and customer satisfaction</span>
-                </li>
-              </ul>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8 order-2 lg:order-1">
+            <div className="space-y-4 opacity-0 animate-fadeIn" style={{ animationDelay: "200ms" }}>
+              <h2 className="text-primary font-semibold tracking-wider uppercase">About Us</h2>
+              <h3 className="text-4xl md:text-5xl font-bold leading-tight">
+                Pioneering Green Energy Solutions
+              </h3>
             </div>
-            <a
-              href="#services"
-              className="inline-flex items-center text-primary hover:text-primary-dark transition-colors group"
-            >
-              Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            
+            <p className="text-lg text-gray-600 opacity-0 animate-fadeIn" style={{ animationDelay: "400ms" }}>
+              At Empee Green Energy, we're committed to revolutionizing the energy sector through
+              innovative renewable solutions. Our mission is to accelerate the global transition
+              to sustainable energy, making it accessible and efficient for everyone.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-6 opacity-0 animate-fadeIn" style={{ animationDelay: "600ms" }}>
+              {[
+                "Industry Leading Technology",
+                "Certified Professionals",
+                "24/7 Support & Maintenance",
+                "Sustainable Solutions"
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-4 opacity-0 animate-fadeIn" style={{ animationDelay: "800ms" }}>
+              <a
+                href="#services"
+                className="inline-flex items-center text-primary hover:text-primary-dark transition-colors group"
+              >
+                Discover Our Services
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+
+          <div className="relative order-1 lg:order-2">
+            <div className="relative z-10 rounded-3xl overflow-hidden opacity-0 animate-fadeIn shadow-2xl" 
+                 style={{ animationDelay: "400ms" }}>
+              <img
+                src="https://images.unsplash.com/photo-1501854140801-50d01698950b"
+                alt="Green Energy Solutions"
+                className="w-full h-[600px] object-cover hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 transform rotate-3 rounded-3xl scale-95 -z-10" />
           </div>
         </div>
       </div>
@@ -55,4 +61,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Mission;
