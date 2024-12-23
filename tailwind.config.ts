@@ -20,9 +20,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#00B67A", // Fresh green color
-          light: "#40C997",
-          dark: "#008F61",
+          DEFAULT: "#70C232", // Fresh green color
+          light: "#8ED553",
+          dark: "#5A9E28",
         },
         secondary: {
           DEFAULT: "#1B3C35", // Dark green
@@ -30,11 +30,11 @@ export default {
           dark: "#112723",
         },
         accent: {
-          DEFAULT: "#F8B653", // Warm orange
+          DEFAULT: "#FFB342", // Warm orange
           foreground: "#FFFFFF",
         },
         background: {
-          light: "#F5F9F7", // Light mint
+          light: "#FFFFFF", // Clean white
           dark: "#1B3C35",
         },
         text: {
@@ -42,9 +42,9 @@ export default {
           primary: "#1B3C35",
           secondary: "#526B65",
           light: "#FFFFFF",
-          foreground: "#1B3C35", // Added this line
+          foreground: "#1B3C35",
         },
-        foreground: "#1B3C35", // Added this line
+        foreground: "#1B3C35",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -66,8 +66,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
-        heading: ["Montserrat", "sans-serif"],
+        sans: ["Rubik", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
