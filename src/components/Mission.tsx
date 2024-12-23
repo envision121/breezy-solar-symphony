@@ -10,7 +10,7 @@ const AboutUs = () => {
             <img
               src="https://images.unsplash.com/photo-1501854140801-50d01698950b"
               alt="Green Energy"
-              className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+              className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
             />
           </div>
           <div className="space-y-6">
@@ -30,6 +30,23 @@ const AboutUs = () => {
               Our commitment to excellence drives us to understand your unique
               requirements and provide tailored solutions that optimize efficiency.
             </p>
+            <div className="space-y-4 mt-6">
+              <h3 className="text-2xl font-semibold text-gray-800">Why Choose Us?</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <span>Expertise in renewable energy technologies</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <span>Comprehensive turnkey solutions tailored to your needs</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <span>Commitment to sustainability and customer satisfaction</span>
+                </li>
+              </ul>
+            </div>
             <a
               href="#about"
               className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors group"

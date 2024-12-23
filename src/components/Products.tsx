@@ -13,9 +13,14 @@ const Products = () => {
       image: "https://images.unsplash.com/photo-1509391366360-2e959784a276",
     },
     {
-      title: "Aero Leaf Wind Turbine",
-      products: ["Wind Flower 3A-900 W", "Wind Palm 18A – 5.4KW", "Wind Tree 36A – 10.8KW"],
+      title: "Hybrid System",
+      products: ["Wind & Solar Hybrid System", "Solar Hybrid System"],
       image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7",
+    },
+    {
+      title: "Solar Pump System",
+      products: ["Deep Well Pumps", "Surface Pumps", "Agricultural Pumps"],
+      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce",
     },
   ];
 
@@ -23,7 +28,7 @@ const Products = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Our Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category, index) => (
             <div
               key={index}
