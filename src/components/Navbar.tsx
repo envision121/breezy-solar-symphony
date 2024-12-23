@@ -19,13 +19,13 @@ const Navbar = () => {
         {/* Top contact bar */}
         <div className="hidden md:flex justify-between items-center py-2 border-b text-sm">
           <div className="flex items-center space-x-2 text-gray-600">
-            <MapPin className="h-4 w-4" />
-            <span>123 Green Energy Street, Chennai, Tamil Nadu, India</span>
+            <MapPin className="h-4 w-4 text-primary" />
+            <span>Empe Green Energy p Ltd, 1st Floor, C1, III Phase –Thiru-vi-ka Industrial Estate, Ekkattuthangal, Guindy Chennai - 600 032, Tamil Nadu, India.</span>
           </div>
           <div className="flex items-center space-x-6">
-            <a href="tel:+911234567890" className="flex items-center text-gray-600 hover:text-primary">
-              <Phone className="h-4 w-4 mr-2" />
-              <span>+91 123 456 7890</span>
+            <a href="tel:+919841210943" className="flex items-center text-gray-600 hover:text-primary">
+              <Phone className="h-4 w-4 text-primary mr-2" />
+              <span>+91 9841210943 / +91 9884410943</span>
             </a>
           </div>
         </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-base font-bold transition-colors"
+                  className="text-black hover:text-primary px-3 py-2 rounded-md text-base font-bold transition-colors"
                 >
                   {item.name}
                 </a>
@@ -73,7 +73,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary block px-3 py-2 rounded-md text-base font-semibold"
+                  className="text-black hover:text-primary block px-3 py-2 rounded-md text-base font-bold"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
