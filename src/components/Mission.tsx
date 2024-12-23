@@ -8,7 +8,7 @@ const Mission = () => {
           <div className="space-y-8 order-2 lg:order-1">
             <div className="space-y-4 opacity-0 animate-fadeIn" style={{ animationDelay: "200ms" }}>
               <h2 className="text-primary font-semibold tracking-wider uppercase">About Us</h2>
-              <h3 className="text-4xl md:text-5xl font-bold leading-tight">
+              <h3 className="text-3xl md:text-4xl font-semibold leading-tight">
                 Pioneering Green Energy Solutions
               </h3>
             </div>
@@ -36,10 +36,10 @@ const Mission = () => {
             <div className="pt-4 opacity-0 animate-fadeIn" style={{ animationDelay: "800ms" }}>
               <a
                 href="#services"
-                className="inline-flex items-center text-primary hover:text-primary-dark transition-colors group"
+                className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full inline-flex items-center group transition-all duration-300"
               >
                 Discover Our Services
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>

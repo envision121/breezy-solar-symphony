@@ -38,7 +38,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-[80vh] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -57,7 +57,7 @@ const Hero = () => {
           />
           <div className="absolute inset-0 flex items-center z-20">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl space-y-6">
+              <div className="max-w-3xl space-y-6 mt-16">
                 <h1 className="text-[50px] font-bold text-white opacity-0 animate-slideIn"
                     style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
                   {slide.title}
@@ -88,31 +88,32 @@ const Hero = () => {
         </div>
       ))}
       
-      {/* Navigation Buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-sm transition-all duration-300"
-      >
-        <ChevronLeft className="h-6 w-6 text-white" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-sm transition-all duration-300"
-      >
-        <ChevronRight className="h-6 w-6 text-white" />
-      </button>
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide ? "w-8 bg-primary" : "bg-white/50"
-            }`}
-          />
-        ))}
+      <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-between items-center px-8">
+        <button
+          onClick={prevSlide}
+          className="bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-sm transition-all duration-300"
+        >
+          <ChevronLeft className="h-6 w-6 text-white" />
+        </button>
+        
+        <div className="flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? "w-8 bg-primary" : "bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
+        
+        <button
+          onClick={nextSlide}
+          className="bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-sm transition-all duration-300"
+        >
+          <ChevronRight className="h-6 w-6 text-white" />
+        </button>
       </div>
     </div>
   );

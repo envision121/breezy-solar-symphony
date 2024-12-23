@@ -85,6 +85,30 @@ const Counter = ({ end, duration = 2000, prefix = "", suffix = "" }) => {
   ];
 
 const KeyHighlights = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const element = document.getElementById('achievements');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -118,36 +142,40 @@ const KeyHighlights = () => {
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-lg shadow-lg animate-fadeIn">
+        <div id="achievements" className="mt-16 bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-lg shadow-lg animate-fadeIn">
           <h2 className="text-2xl font-bold mb-8 text-center">Achievements and Expertise</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-              <div className="mb-4">
-                <Counter end={5} suffix="+ MW" duration={3000} />
-              </div>
-              <p className="text-gray-600">Small wind systems installed across India</p>
-              <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
-                <div className="h-full bg-primary w-full animate-[progress_2s_ease-out]"></div>
-              </div>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-              <div className="mb-4">
-                <Counter end={1} prefix="#" duration={3000} />
-              </div>
-              <p className="text-gray-600">Leading provider of solar power plants in Tamil Nadu and South India</p>
-              <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
-                <div className="h-full bg-primary w-[95%] animate-[progress_2s_ease-out]"></div>
-              </div>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-              <div className="mb-4">
-                <Counter end={100} suffix="%" duration={3000} />
-              </div>
-              <p className="text-gray-600">Proven expertise in integrating hybrid energy systems and solar water pumps</p>
-              <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
-                <div className="h-full bg-primary w-full animate-[progress_2s_ease-out]"></div>
-              </div>
-            </div>
+            {isVisible && (
+              <>
+                <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="mb-4">
+                    <Counter end={5} suffix="+ MW" duration={3000} />
+                  </div>
+                  <p className="text-gray-600">Small wind systems installed across India</p>
+                  <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary w-full animate-[progress_2s_ease-out]"></div>
+                  </div>
+                </div>
+                <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="mb-4">
+                    <Counter end={1} prefix="#" duration={3000} />
+                  </div>
+                  <p className="text-gray-600">Leading provider of solar power plants in Tamil Nadu and South India</p>
+                  <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary w-[95%] animate-[progress_2s_ease-out]"></div>
+                  </div>
+                </div>
+                <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="mb-4">
+                    <Counter end={100} suffix="%" duration={3000} />
+                  </div>
+                  <p className="text-gray-600">Proven expertise in integrating hybrid energy systems and solar water pumps</p>
+                  <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary w-full animate-[progress_2s_ease-out]"></div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
