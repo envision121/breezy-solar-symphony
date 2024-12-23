@@ -1,4 +1,4 @@
-import { Wind, Sun, Battery, Plug, Factory, Leaf } from "lucide-react";
+import { Wind, Sun, Battery, Plug, Factory, Leaf, ArrowRight } from "lucide-react";
 
 const KeyHighlights = () => {
   const solutions = [
