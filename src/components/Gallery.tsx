@@ -67,7 +67,7 @@ const Gallery = () => {
             <span>Our Projects</span>
             <span className="w-2 h-2 rounded-full bg-primary inline-block"></span>
           </h2>
-          <h3 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-black">
+          <h3 className="font-heading text-4xl font-semibold text-black">
             Explore Our Latest Projects
           </h3>
         </div>
@@ -83,11 +83,11 @@ const Gallery = () => {
           <CarouselContent>
             {projects.map((project, index) => (
               <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                <div className="group relative overflow-hidden rounded-2xl shadow-lg h-[400px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg h-[400px]">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                     <div className="absolute bottom-0 left-0 right-0 p-6">

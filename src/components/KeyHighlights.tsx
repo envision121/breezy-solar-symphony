@@ -6,7 +6,9 @@ const Counter = ({ end, duration = 2000, prefix = "", suffix = "" }) => {
 
   useEffect(() => {
     let startTime = null;
-    const step = (timestamp) => {
+    let animationFrameId;
+
+    const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
@@ -14,11 +16,17 @@ const Counter = ({ end, duration = 2000, prefix = "", suffix = "" }) => {
       setCount(Math.floor(end * percentage));
       
       if (progress < duration) {
-        window.requestAnimationFrame(step);
+        animationFrameId = window.requestAnimationFrame(animate);
       }
     };
     
-    window.requestAnimationFrame(step);
+    animationFrameId = window.requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, [end, duration]);
 
   return (
@@ -28,7 +36,6 @@ const Counter = ({ end, duration = 2000, prefix = "", suffix = "" }) => {
   );
 };
 
-const KeyHighlights = () => {
   const solutions = [
     {
       icon: <Wind className="h-12 w-12 text-primary bg-primary/10 p-2 rounded-full" />,
@@ -77,6 +84,7 @@ const KeyHighlights = () => {
     },
   ];
 
+const KeyHighlights = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -115,29 +123,29 @@ const KeyHighlights = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
               <div className="mb-4">
-                <Counter end={5} suffix="+ MW" />
+                <Counter end={5} suffix="+ MW" duration={3000} />
               </div>
               <p className="text-gray-600">Small wind systems installed across India</p>
               <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
-                <div className="h-full bg-primary w-full animate-[progress_1.5s_ease-out]"></div>
+                <div className="h-full bg-primary w-full animate-[progress_2s_ease-out]"></div>
               </div>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
               <div className="mb-4">
-                <Counter end={1} prefix="#" />
+                <Counter end={1} prefix="#" duration={3000} />
               </div>
               <p className="text-gray-600">Leading provider of solar power plants in Tamil Nadu and South India</p>
               <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
-                <div className="h-full bg-primary w-[95%] animate-[progress_1.5s_ease-out]"></div>
+                <div className="h-full bg-primary w-[95%] animate-[progress_2s_ease-out]"></div>
               </div>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
               <div className="mb-4">
-                <Counter end={100} suffix="%" />
+                <Counter end={100} suffix="%" duration={3000} />
               </div>
               <p className="text-gray-600">Proven expertise in integrating hybrid energy systems and solar water pumps</p>
               <div className="mt-4 h-2 bg-primary/20 rounded-full overflow-hidden">
-                <div className="h-full bg-primary w-full animate-[progress_1.5s_ease-out]"></div>
+                <div className="h-full bg-primary w-full animate-[progress_2s_ease-out]"></div>
               </div>
             </div>
           </div>

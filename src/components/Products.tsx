@@ -58,9 +58,9 @@ const Products = () => {
                 </ul>
                 <a
                   href="#"
-                  className="inline-flex items-center text-primary hover:text-primary-dark transition-colors group"
+                  className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full inline-flex items-center group transition-all duration-300"
                 >
-                  Learn More{" "}
+                  Learn More
                   <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

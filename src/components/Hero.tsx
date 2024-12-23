@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="absolute inset-0 flex items-center z-20">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl space-y-6">
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white opacity-0 animate-slideIn"
+                <h1 className="text-[50px] font-bold text-white opacity-0 animate-slideIn"
                     style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
                   {slide.title}
                 </h1>

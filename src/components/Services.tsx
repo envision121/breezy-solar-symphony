@@ -33,43 +33,43 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto mb-16 opacity-0 animate-fadeIn">
           <h2 className="text-primary font-semibold tracking-wider uppercase mb-4">Our Services</h2>
-          <h3 className="text-3xl md:text-4xl font-semibold mb-6 whitespace-nowrap">
+          <h3 className="text-3xl md:text-4xl font-semibold mb-6">
             Comprehensive Energy Solutions
           </h3>
-          <p className="text-gray-600 text-lg">
-            Discover our range of innovative renewable energy services designed to power a sustainable future
-          </p>
+          <a
+            href="#contact"
+            className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full inline-flex items-center group transition-all duration-300"
+          >
+            Discover Our Services
+            <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-2xl opacity-0 animate-fadeIn"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              <div className="relative p-8 bg-white hover:bg-transparent transition-colors duration-500 h-full flex flex-col">
-                <div className="mb-6 text-primary group-hover:text-white transition-colors duration-500">
-                  {service.icon}
-                </div>
-                <h4 className="text-xl font-semibold mb-4 group-hover:text-white transition-colors duration-500">
-                  {service.title}
-                </h4>
-                <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500">
-                  {service.description}
-                </p>
-                <div className="mt-6 pt-6 border-t border-gray-100 group-hover:border-white/10 transition-colors duration-500">
-                  <a
-                    href="#"
-                    className="inline-flex items-center text-primary group-hover:text-white transition-colors duration-500"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                  </a>
+            <>
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-2xl opacity-0 animate-fadeIn"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className="relative p-8 bg-white hover:bg-transparent transition-colors duration-500 h-full flex flex-col">
+                  <div className="mb-6 text-primary group-hover:text-white transition-colors duration-500">
+                    {service.icon}
+                  </div>
+                  <h4 className="text-xl font-semibold mb-4 group-hover:text-white transition-colors duration-500">
+                    {service.title}
+                  </h4>
+                  <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500">
+                    {service.description}
+                  </p>
                 </div>
               </div>
-            </div>
+              {index < services.length - 1 && (
+                <div className="hidden lg:block absolute h-2/3 w-px bg-gray-200 top-1/2 -translate-y-1/2" style={{ left: `${(index + 1) * 25}%` }} />
+              )}
+            </>
           ))}
         </div>
       </div>
